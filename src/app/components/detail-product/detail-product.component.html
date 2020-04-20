@@ -1,5 +1,5 @@
 <header>
-    
+
     <app-header></app-header>
 
     <app-breadcrumb></app-breadcrumb>
@@ -8,26 +8,353 @@
 
 </header>
 
-<main role="main">    
-    <!--Title categroy-->                
+<main role="main">
+    <!--Title categroy-->
     <div class="container search-by-cate">
-        <h2 class="tit-category"><fa-icon [icon]="faCar"></fa-icon> Tìm phụ tùng theo xe</h2>     
-        <div class="row">
-          <div class="col">
-            <a class="btn button-cate active" href="#">Tất cả</a>
-            <a class="btn button-cate" href="#">Peugeot 5008</a>
-            <a class="btn button-cate" href="#">Peugeot 508</a>
-            <a class="btn button-cate" href="#">Peugeot 3008</a>
-            <a class="btn button-cate" href="#">Peugeot 3008 FL</a>
-            <a class="btn button-cate" href="#">Peugeot 408</a>
-          </div>              
-        </div>            
+        <h1 class="tit-category">
+            <fa-icon [icon]="faCar"></fa-icon> Đèn pha trái Peugeot 3008 - 2017 - 8158CD592201
+        </h1>
+        <!-- <div class="row">
+            <div class="col">
+                <a class="btn button-cate active" href="#">Tất cả</a>
+                <a class="btn button-cate" href="#">Peugeot 5008</a>
+                <a class="btn button-cate" href="#">Peugeot 508</a>
+                <a class="btn button-cate" href="#">Peugeot 3008</a>
+                <a class="btn button-cate" href="#">Peugeot 3008 FL</a>
+                <a class="btn button-cate" href="#">Peugeot 408</a>
+            </div>
+        </div> -->
     </div>
     <!--End Title categroy-->
 
-    <div class="container list-products">
+    <div class="container content-detail-product">
         <div class="row">
-            Chit tiet
+            <div class="col-md-5">
+                <div class="img-product">
+                    <img src="./assets/img/product-2.png" alt="product 1" class="img-fluid" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-3"><img src="./assets/img/product-2.png" alt="product 1"
+                                    class="img-fluid" /></div>
+                            <div class="col-3"><img src="./assets/img/product-2.png" alt="product 1"
+                                    class="img-fluid" /></div>
+                            <div class="col-3"><img src="./assets/img/product-2.png" alt="product 1"
+                                    class="img-fluid" /></div>
+                            <div class="col-3"><img src="./assets/img/product-2.png" alt="product 1"
+                                    class="img-fluid" /></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 tit-content-dt-product text-center">
+                            <h4 class="tit-dt-product">Đèn pha trái Peugeot 3008 - 2017</h4>
+                            <h4 class="ma-dt-product">8158CD592201</h4>
+                        </div>
+                        <div class="col-6 price-dt-prduct text-right">Giá: Liên Hệ</div>
+                        <div class="col-6 add-to-cart text-left"><button class="btn site-button">Đặt mua</button></div>
+                    </div>
+                    <div class="des-add-to-cart">
+                        <ul>
+                            <li>Vận chuyển miễn phí ra các đơn hàng > 3,000,000 đ</li>
+                            <li>Giá trên chưa bao gồm VAT</li>
+                            <li>Cam kết sản phẩm 100% chính hãng</li>
+                        </ul>
+                        <h5>Điện thoại bán hàng</h5>
+                        <a href="tel:+84977454568" title="Online 27/4">
+                            <img src="./assets/img/hotline_banhang.png" alt="Điện thoại bán hàng online"
+                                class="img-fluid" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 main-ds-content-product">
+                <h2 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> Đèn pha trái Peugeot 3008 - 2017 - 8158CD592201</h2>
+                <p class="m-tb20"><strong>VHP Auto</strong> is simply dummy text of the print ing and in type setting
+                    industry. Lorem Ipsum has bee the industry's standard...</p>
+                <div class="row">
+                    <div class="col-md-7 col-12">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <td>Mã sản phẩm</td>
+                                    <th>8158CD592201</th>
+                                </tr>
+                                <tr>
+                                    <td>Tên sảm phẩm</td>
+                                    <td>
+                                        <h3>Đèn pha trái Peugeot 3008 - 2017</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Thương hiệu</td>
+                                    <td>Peugeot</td>
+                                </tr>
+                                <tr>
+                                    <td>Xuất xứ</td>
+                                    <th>Chính hãng</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <img src="./assets/img/btn-facebook.png" alt="Like Facebook" class="img-fluid" />
+                    </div>
+                    <div class="col-md-5 col-12 text-center">
+                        <h5>Điện thoại bán hàng</h5>
+                        <a href="tel:+84977454568" title="Online 27/4">
+                            <img src="./assets/img/hotline_banhang.png" alt="Điện thoại bán hàng online"
+                                class="img-fluid" />
+                        </a>
+                    </div>
+                </div>
+                <div class="row comment-facebook">
+                    <img src="./assets/img/comment-facebook.png" class="img-fluid" alt="Comment Facebook" />
+                </div>
+                <div class="row car-use">
+                    <div class="col-12">
+                        <h3 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> Đèn pha trái Peugeot 3008 - 2017
+                            -
+                            8158CD592201</h3>
+                        <table class="table table-hover">
+                            <tr class="bg-primary">
+                                <th>Ảnh minh họa</th>
+                                <th>Xe sử dụng</th>
+                                <th>Năm sản xuất</th>
+                                <th>Xuất xứ</th>
+                            </tr>
+                            <tr>
+                                <td style="max-width:140px;"><img src="./assets/img/pic1a.jpg" class="img-fluid"
+                                        alt="Car user" /></td>
+                                <td><a href="#">Peugeot 5008</a></td>
+                                <td>2017 - 2018</td>
+                                <td>
+                                    <h6>Chính hãng</h6>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="max-width:140px;"><img src="./assets/img/pic2a.jpg" class="img-fluid"
+                                        alt="Car user" /></td>
+                                <td><a href="#">Peugeot 5008</a>, <a href="#">Peugeot 3008</a></td>
+                                <td>2015 - 2017</td>
+                                <td>
+                                    <h6>Chính hãng</h6>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- San pham cung loai -->
+    <div class="container list-products">
+        <h3 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> Sản phẩm cùng loại</h3>
+        <div class="row">
+            <div class="col-md-3 col-6 text-center cate1">
+                <img src="./assets/img/product-1.png" alt="Title Product" class="img-fluid">
+                <div class="info-product">
+                    <p class="line-img-product"></p>
+                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                </div>
+                <p class="price">Giá: Liên hệ</p>
+            </div>
+            <div class="col-md-3 col-6 text-center cate2">
+                <img src="./assets/img/product-2.png" alt="Title Product" class="img-fluid">
+                <div class="info-product">
+                    <p class="line-img-product"></p>
+                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                </div>
+                <p class="price">Giá: Liên hệ</p>
+            </div>
+            <div class="col-md-3 col-6 text-center cate3">
+                <img src="./assets/img/product-3.png" alt="Title Product" class="img-fluid">
+                <div class="info-product">
+                    <p class="line-img-product"></p>
+                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                </div>
+                <p class="price">Giá: Liên hệ</p>
+            </div>
+            <div class="col-md-3 col-6 text-center cate4">
+                <img src="./assets/img/product-4.png" alt="Title Product" class="img-fluid">
+                <div class="info-product">
+                    <p class="line-img-product"></p>
+                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                </div>
+                <p class="price">Giá: Liên hệ</p>
+            </div>
+        </div>
+
+        <!-- San pham da xem -->
+        <h3 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> Sản phẩm đã xem</h3>
+        <div class="row">
+            <div class="col-md-3 col-6 text-center cate1">
+                <img src="./assets/img/product-1.png" alt="Title Product" class="img-fluid">
+                <div class="info-product">
+                    <p class="line-img-product"></p>
+                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                </div>
+                <p class="price">Giá: Liên hệ</p>
+            </div>
+            <div class="col-md-3 col-6 text-center cate2">
+                <img src="./assets/img/product-2.png" alt="Title Product" class="img-fluid">
+                <div class="info-product">
+                    <p class="line-img-product"></p>
+                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                </div>
+                <p class="price">Giá: Liên hệ</p>
+            </div>
+            <div class="col-md-3 col-6 text-center cate3">
+                <img src="./assets/img/product-3.png" alt="Title Product" class="img-fluid">
+                <div class="info-product">
+                    <p class="line-img-product"></p>
+                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                </div>
+                <p class="price">Giá: Liên hệ</p>
+            </div>
+            <div class="col-md-3 col-6 text-center cate4">
+                <img src="./assets/img/product-4.png" alt="Title Product" class="img-fluid">
+                <div class="info-product">
+                    <p class="line-img-product"></p>
+                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                </div>
+                <p class="price">Giá: Liên hệ</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Huong Dan mua hang -->
+    <div class="container">
+        <div class="row">
+          <div class="inner-wrapper footer-info-adm">
+            <!--Huong dan thanh toan-->              
+                <div class="ft-info-left dv-content-ft col-md-6">
+                  <h4>Các hình thức thanh toán!</h4>
+                  <div id="payment-list">
+                        <div class="payment-item">
+                            <div class="payment-img">
+                                <img src="./assets/img/office-icon.png" alt="icon-phutungsuzuki" title="icon-phutungsuzuki" class="img-responsive">
+                            </div>
+                            <div class="content-wp">
+                                <h6>Thanh toán trực tiếp tại các văn phòng VHP Auto</h6>
+                                <span>
+                                    Sử dụng khi khách hàng có nhu cầu mua hàng trực tiếp tại cửa hàng.
+                                </span>
+                            </div>
+                            
+                        </div>
+                        <div class="payment-item">
+                            <div class="payment-img">
+                                <img src="./assets/img/post-office.png" alt="icon-phutungsuzuki" title="icon-phutungsuzuki" class="img-responsive">
+                            </div>
+                            <div class="content-wp">
+                                <h6>Thanh toán qua bưu điện - dịch vụ chuyển tiền</h6>
+                                <span>
+                                    Sử dụng khi khách hàng ở xa, không thuận tiện cho việc giao dịch trực tiếp cũng như qua ngân hàng. Sau khi nhận được tiền chúng tôi sẽ chuyển hàng đúng đủ, theo chất lượng quý khách hàng yêu cầu.
+                                </span>
+                            </div>
+                            
+                        </div>
+                        <div class="payment-item">
+                                <div class="payment-img">
+                                <img src="./assets/img/Coach-icon.png" alt="icon-phutungsuzuki" title="icon-phutungsuzuki" class="img-responsive">
+                            </div>
+                            <div class="content-wp">
+                                <h6>Thanh toán nhà xe vận chuyển</h6>
+                                <span>
+                                    Chúng tôi sẽ chuyển hàng qua nhà xe, quý khách nhận hàng và thanh toán trực tiếp cho nhà xe vận chuyển.
+                                </span>
+                            </div>
+                            
+                        </div>
+                        <div class="payment-item">
+                            <div class="payment-img">
+                                <img src="./assets/img/bank-icon.png" alt="icon-phutungsuzuki" title="icon-phutungsuzuki" class="img-responsive">
+                            </div>
+                            <div class="content-wp">
+                                <h6>Thanh toán qua chuyển khoản ngân hàng</h6>
+                                <span>
+                                    Quý khách có thể thanh toán cho chúng tôi bằng cách chuyển khoản trực tiếp tại ngân hàng, chuyển qua thẻ ATM, hoặc qua Internet
+                                Banking.
+                                </span>
+                            </div>
+                            
+                            <div class="bank-logo">
+              
+                                    <div class="bank-item">
+              
+                                        <img src="./assets/img/MBB.gif" alt="Ngân hàng Quân Đội" title="icon-phutungsuzuki">
+              
+                                        <img src="./assets/img/VPB.gif" alt="Ngân hàng TMCP Việt Nam Thịnh Vượng" title="icon-phutungsuzuki">
+              
+                                        <img src="./assets/img/VCB.gif" alt="Ngân hàng TMCP Ngoại thương Việt Nam - Vietcombank" title="icon-phutungsuzuki">
+              
+                                        <img src="./assets/img/TCB.gif" alt="Ngân hàng TMCP Kỹ Thương Việt Nam - Techcombank" title="icon-phutungsuzuki">
+              
+                                        <img src="./assets/img/SCB.gif" alt="Ngân hàng TMCP Sài Gòn Thương Tín" title="icon-phutungsuzuki">
+              
+                                        <img src="./assets/img/BIDV.gif" alt="Ngân hàng Đầu Tư Và Phát Triển Việt Nam - BIDV" title="icon-phutungsuzuki">
+              
+                                        <img src="./assets/img/AGR.gif" alt="Ngân hàng Nông Nghiệp Và Phát Triển Nông Thôn Việt Nam - Agribank" title="icon-phutungsuzuki">
+              
+                                        <img src="./assets/img/MSB.gif" alt="Ngân hàng TMCP Hàng Hải Việt Nam" title="icon-phutungsuzuki">
+              
+                                        <img src="./assets/img/VTB.gif" alt="Ngân hàng TMCP Công Thương Việt Nam - Vietinbank" title="icon-phutungsuzuki">
+              
+                                    </div>
+              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ft-info-right dv-content-ft col-md-6">
+                  <h4>Thông tin tài khoản ngân hàng</h4>
+                  <div id="review-list">
+                    <div class="review-item">
+                        <div class="review-img">
+                            <img src="./assets/img/icon-money.png" alt="" title="">
+                        </div>
+                        <div class="content-wp">
+                          <h5><span style="text-decoration: underline;"><em><strong>VIETINBANK</strong></em></span></h5>
+                          <p>Chi nhánh: VIETINBANK CN Hai Bà Trưng – Hà Nội</p>
+                          <h6>Số TK: 110000064709 &nbsp; :|: &nbsp;&nbsp;Chủ TK: Cty TNHH XNK và Kinh Doanh VHP</h6>
+                        </div>
+                        
+                    </div>
+                    <div class="review-item">
+                        <div class="review-img">
+                            <img src="./assets/img/icon-money.png" alt="" title="">
+                        </div>
+                        <div class="content-wp">
+                          <h5><span style="text-decoration: underline;"><em><strong>AGRIBANK</strong></em></span></h5>
+                          <p>Chi nhánh: AGRIBANK CN Thăng Long – Hà Nội</p>
+                          <h6>Số TK: 1300206057803 &nbsp; :|: &nbsp;&nbsp;Chủ TK: Vũ Ngọc Huyền</h6>
+                        </div>
+                        
+                    </div>
+                    <div class="review-item">
+                            <div class="review-img">
+                            <img src="./assets/img/icon-money.png" alt="" title="">
+                        </div>
+                        <div class="content-wp">
+                          <h5><span style="text-decoration: underline;"><em><strong>VIETCOMBANK</strong></em></span></h5>
+                          <p>Chi nhánh: VIETCOMBANK Hội sở Hà Nội Số</p>
+                          <h6>Số TK: 0011004113667 &nbsp; :|: &nbsp;&nbsp;Chủ TK: Vũ Ngọc Huyền</h6>
+                        </div>
+                        
+                    </div>
+                    <div class="review-item">
+                            <div class="review-img">
+                            <img src="./assets/img/icon-money.png" alt="" title="">
+                        </div>
+                        <div class="content-wp">
+                          <h5><span style="text-decoration: underline;"><em><strong>VIETINBANK</strong></em></span></h5>
+                          <p>Chi nhánh: VIETINBANK CN Hai Bà Trưng – Hà Nội</p>
+                          <h6>Số TK: 101003852917 &nbsp; :|: &nbsp;&nbsp;Chủ TK: Vũ Ngọc Huyền</h6>
+                        </div>
+                        
+                    </div>
+                  </div>
+                </div>                
+              <!--End Huong dan thanh toan-->     
+              </div>     
+            </div>          
+      </div>
 </main>

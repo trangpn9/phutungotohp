@@ -15,6 +15,8 @@ const appRoutes: Routes = [
   { path: 'home', redirectTo: '/', pathMatch: 'full'},      
   { path: 'san-pham', loadChildren: () => import('./modules/category-products/category-products.module').then(m => m.CategoryProductsModule) },
   { path: 'search', loadChildren: () => import('./modules/search-result/search-result.module').then(m => m.SearchResultModule) },
+  { path: 'page', loadChildren: () => import('./modules/page-content/page-content.module').then(m => m.PageContentModule) },
+  { path: 'post', loadChildren: () => import('./modules/post-content/post-content.module').then(m => m.PostContentModule) },
   { path: '**', component: PageNotFoundComponent },
 ];
 

@@ -9,6 +9,7 @@ import { SearchComponent } from './../../components/search/search.component';
 import { HeaderComponent } from './../../components/header/header.component';
 import { BreadcrumbComponent } from './../../components/breadcrumb/breadcrumb.component';
 import { PreviewProductComponent } from './../../components/preview-product/preview-product.component';
+import { PaginationComponent } from './../../components/pagination/pagination.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PreviewProductComponent } from './../../components/preview-product/prev
     SearchComponent,
     BreadcrumbComponent,
     PreviewProductComponent,
+    PaginationComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { PreviewProductComponent } from './../../components/preview-product/prev
     SearchComponent,
     BreadcrumbComponent,
     PreviewProductComponent,
+    PaginationComponent,
   ]
 })
 export class CommonVhpAutoModule { }
