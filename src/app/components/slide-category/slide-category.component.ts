@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-slide-category',
@@ -7,6 +8,9 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./slide-category.component.css']
 })
 export class SlideCategoryComponent implements OnInit {
+  
+  faChevronRight = faChevronRight;
+  faChevronLeft = faChevronLeft;
 
   customOptions: OwlOptions = {
     loop: true,    
@@ -14,8 +18,7 @@ export class SlideCategoryComponent implements OnInit {
     touchDrag: false,
     pullDrag: false,
     dots: false,
-    navSpeed: 700,
-    navText: ['previous', 'next'],
+    navSpeed: 700,  
     responsive: {
       0: {
         items: 1
@@ -30,7 +33,7 @@ export class SlideCategoryComponent implements OnInit {
         items: 3
       }
     },
-    nav: true
+    nav: false
   }
 
   constructor() { }

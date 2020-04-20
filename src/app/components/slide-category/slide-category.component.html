@@ -1,26 +1,70 @@
 <!-- Category Peugeot -->
-<div class="section-full bg-img-fix dlab-new-work overlay-white-dark " style="background-image: url(./../../../../assets/img/bg1.jpg);">
+<div id="slideCategory" class="section-full bg-img-fix dlab-new-work overlay-white-dark " style="background-image: url(./../../../../assets/img/bg1.jpg);">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 col-sm-4  p-a0 no-of-item">
+            <div class="col-md-3 col-sm-4  p-3 no-of-item">
                 <div class="no-of-item-dtl">
                     <img src="./../../../assets/img/Peugeot-logo.png" style="width:205px;" alt="Peugeot Logo" />
                     <h3>Phụ tùng theo xe</h3>
+                    <p class="float-md-right mt-sm-0 mt-md-1 mt-lg-2 mt-xl-5 mb-0">
+                        <a class="btn btn-dark" (click)="owlCar.prev()"><fa-icon [icon]="faChevronLeft"></fa-icon></a>
+                        <a class="btn btn-dark" (click)="owlCar.next()"><fa-icon [icon]="faChevronRight"></fa-icon></a>
+                    </p>
                 </div>
             </div>
             <div class="col-md-9 col-sm-8 p-0">
-                <owl-carousel-o [options]="customOptions">
-                    <ng-template carouselSlide>
-                        <img src="./../../../assets/img/pic1a.jpg" alt="" />
+                <owl-carousel-o [options]="customOptions" #owlCar>
+                    <ng-template carouselSlide>                        
+                        <div class="item dlab-new-item">
+                            <div class="dlab-box">
+                                <div class="dlab-media"> 
+                                    <a href="#"><img src="./../../../assets/img/pic1a.jpg" alt=""></a> 
+                                </div>
+                                <div class="dlab-info">
+                                    <p class="event-date">Phụ tùng</p>
+                                    <h4 class="dlab-title"><a href="#">Peugeot 5008 <svg class="svg-inline--fa fa-angle-right fa-w-8 pull-right" aria-hidden="true" data-prefix="fa" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg=""><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fa fa-angle-right pull-right"></i> --></a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <ng-template carouselSlide>                        
+                        <div class="item dlab-new-item">
+                            <div class="dlab-box">
+                                <div class="dlab-media"> 
+                                    <a href="#"><img src="./../../../assets/img/pic2a.jpg" alt=""></a> 
+                                </div>
+                                <div class="dlab-info">
+                                    <p class="event-date">Phụ tùng</p>
+                                    <h4 class="dlab-title"><a href="#">Peugeot 5008 <svg class="svg-inline--fa fa-angle-right fa-w-8 pull-right" aria-hidden="true" data-prefix="fa" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg=""><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fa fa-angle-right pull-right"></i> --></a></h4>
+                                </div>
+                            </div>
+                        </div>                        
+                    </ng-template>
+                    <ng-template carouselSlide>                        
+                        <div class="item dlab-new-item">
+                            <div class="dlab-box">
+                                <div class="dlab-media"> 
+                                    <a href="#"><img src="./../../../assets/img/pic3a.jpg" alt=""></a> 
+                                </div>
+                                <div class="dlab-info">
+                                    <p class="event-date">Phụ tùng</p>
+                                    <h4 class="dlab-title"><a href="#">Peugeot 5008 <svg class="svg-inline--fa fa-angle-right fa-w-8 pull-right" aria-hidden="true" data-prefix="fa" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg=""><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fa fa-angle-right pull-right"></i> --></a></h4>
+                                </div>
+                            </div>
+                        </div>
                     </ng-template>
                     <ng-template carouselSlide>
-                        <img src="./../../../assets/img/pic2a.jpg" alt="" />
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <img src="./../../../assets/img/pic3a.jpg" alt="" />
-                    </ng-template>
-                    <ng-template carouselSlide>
-                        <img src="./../../../assets/img/pic2a.jpg" alt="" />
+                        <div class="item dlab-new-item">
+                            <div class="dlab-box">
+                                <div class="dlab-media"> 
+                                    <a href="#"><img src="./../../../assets/img/pic2a.jpg" alt=""></a> 
+                                </div>
+                                <div class="dlab-info">
+                                    <p class="event-date">Phụ tùng</p>
+                                    <h4 class="dlab-title"><a href="#">Peugeot 5008 <svg class="svg-inline--fa fa-angle-right fa-w-8 pull-right" aria-hidden="true" data-prefix="fa" data-icon="angle-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" data-fa-i2svg=""><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg><!-- <i class="fa fa-angle-right pull-right"></i> --></a></h4>
+                                </div>
+                            </div>
+                        </div>
                     </ng-template>
                 </owl-carousel-o>
             </div>

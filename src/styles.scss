@@ -21,11 +21,27 @@ body {
   color: #000;
 }
 
-header {
+body.homePage header {
   background-image: url('./assets/img/bg_slide.jpg');
   padding-bottom: 2rem;
   background-repeat: no-repeat;
   width: 100%;
+}
+
+/*Set background header category and detail*/
+body.isNotHomePage header{
+  background-image: none;
+  /* background-color: #191F23; */
+  background-color: #fff;
+  padding-bottom:1rem;
+}
+body.isNotHomePage .top-bar{
+  background-color: #14191C;
+  border-bottom: none;
+  border-radius: 0;
+}
+body.isNotHomePage nav.bg-transparent{
+  background-color: #191F23 !important;
 }
 
 /* CUSTOMIZE THE CAROUSEL
@@ -42,182 +58,6 @@ header {
   width: 50em;
   height: auto;
 }
-
-
-
-/*Sldie Feature Car*/
-
-/* Dez New Work */
-.no-of-item h2 {
-  font-size: 115px;
-  color: #000;
-  opacity: 0.2;
-  font-family: "Montserrat", sans-serif;
-  font-weight: bold;
-  line-height: 115px;
-  margin: 0;
-}
-
-.no-of-item h3 {
-  font-size: 28px;
-  color: #000;
-  font-weight: 420;
-  text-transform: uppercase;
-}
-
-.new-item .owl-item .dlab-info {
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 16px 20px;
-  transition: all 0.5s ease 0s;
-}
-
-.new-item .owl-item:nth-child(2n+1) .dlab-info {
-  background-color: rgba(255, 255, 255, 0.95);
-  transition: all 0.5s ease 0s;
-}
-
-.dlab-new-item .dlab-info p {
-  margin: 0;
-  color: #636363;
-}
-
-.dlab-new-item .dlab-info .dlab-title a {
-  color: #000;
-}
-
-.dlab-new-item .dlab-info .dlab-title {
-  font-weight: 600;
-  text-transform: uppercase;
-  margin: 10px 0 0;
-}
-
-.new-item .owl-nav {
-  bottom: 35px;
-  height: 40px;
-  left: -130px;
-  margin-top: 20px;
-  position: absolute;
-  text-align: center;
-  transform-origin: calc(-50%) 50% 0;
-  width: 100px;
-}
-
-.new-item .dlab-new-item:hover .dlab-info {
-  background-color: #D81517;
-}
-
-.new-item .dlab-new-item:hover .dlab-info p,
-.new-item .dlab-new-item:hover .dlab-info .dlab-title a {
-  color: #fff;
-  transition: all 0s ease 0s;
-  text-decoration: none;
-}
-
-.dlab-new-work:after {
-  width: 25%;
-}
-
-.p-a0 {
-  padding: 0;
-}
-
-.no-of-item {
-  padding: 30px;
-}
-
-.no-of-item-dtl {
-  text-align: center;
-}
-
-.owl-btn-style-2 .owl-nav .owl-prev,
-.owl-btn-style-1 .owl-nav .owl-prev,
-.owl-btn-style-2 .owl-nav .owl-next,
-.owl-btn-style-1 .owl-nav .owl-next {
-  width: 40px;
-  height: 40px;
-  border: 0;
-  background-color: #373f44;
-  line-height: 40px;
-  padding: 0;
-  font-size: 18px;
-}
-
-.owl-btn-style-2 .owl-nav .owl-prev,
-.owl-btn-style-2 .owl-nav .owl-next {
-  background-color: #e9e9e9;
-  color: #000;
-}
-
-.owl-btn-style-2 .owl-nav {
-  margin-top: 0;
-  position: absolute;
-  right: 11px;
-  text-align: center;
-  top: -85px;
-}
-
-.owl-carousel.owl-btn-style-1 .owl-nav,
-.owl-carousel.owl-btn-style-2 .owl-nav {
-  display: block;
-}
-
-.btn,
-.button-skew i:before,
-.button-skew span,
-.owl-next,
-.owl-prev,
-.site-button-link {
-  display: inline-block;
-}
-
-.owl-next,
-.owl-prev {
-  background-color: rgba(0, 0, 0, .5);
-  border-color: rgba(0, 0, 0, .5);
-  color: #fff;
-  padding: 5px 8px;
-  margin-left: 5px;
-  margin-right: 5px;
-  font-size: 13px;
-  cursor: pointer;
-  border-width: 0;
-  border-style: solid;
-}
-
-@media only screen and (max-width: 1024px) {
-  .no-of-item h3 {
-    font-size: 20px;
-  }
-
-  .no-of-item h2 {
-    font-size: 75px;
-    line-height: 75px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  .dlab-new-work:after {
-    height: 50%;
-    width: 100%;
-  }
-
-  .no-of-item-dtl {
-    text-align: center;
-  }
-
-  .new-item .owl-nav {
-    bottom: auto;
-    left: 50%;
-    top: -80px;
-    margin-left: -50px;
-  }
-
-  .no-of-item {
-    padding: 30px 30px 60px 30px;
-  }
-}
-
-/*End Sldie Feature Car*/
 
 /*Footer*/
 .footer-top {
@@ -837,4 +677,53 @@ label {
 
 .modal-content .product-details {
   width: 65%;
+}
+#slideCategory {
+  display: block;
+  position: relative;
+}
+#slideCategory .owl-nav.ng-star-inserted {
+  position: absolute;
+  margin-top: 0;
+  z-index: 1000;
+  bottom: 30px;
+  left: -90px;
+}
+#slideCategory .owl-item:nth-child(2n+1) .dlab-info {
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.5s ease 0s;
+}
+#slideCategory .owl-item .dlab-info {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 16px 20px;
+  transition: all 0.5s ease 0s;
+}
+#slideCategory .dlab-new-item:hover .dlab-info {
+  background-color: #D81517;
+}
+.tit-category {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 24px;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 5px;
+}
+.search-by-cate{
+  margin-bottom: 20px;
+}
+.search-by-cate a.btn{
+  border: none !important;
+  color: #1d1d1d;
+  background-color: #e9e9e9;
+  margin-bottom: 5px;
+}
+.btn.button-cate {
+  margin-right: 5px;
+}
+.btn.button-cate:last-child {
+  margin-right: 0 !important;
+}
+.btn.button-cate:hover, .btn.button-cate.active {
+  background: #D81517;
+  color: #fff;
 }

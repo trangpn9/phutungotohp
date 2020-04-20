@@ -13,6 +13,8 @@ import { SlideCategoryComponent } from './components/slide-category/slide-catego
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', redirectTo: '/', pathMatch: 'full'},      
+  { path: 'san-pham', loadChildren: () => import('./modules/category-products/category-products.module').then(m => m.CategoryProductsModule) },
+  { path: 'search', loadChildren: () => import('./modules/search-result/search-result.module').then(m => m.SearchResultModule) },
   { path: '**', component: PageNotFoundComponent },
 ];
 
