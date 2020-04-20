@@ -1,0 +1,40 @@
+.carousel-frm {
+    justify-content: center
+  }
+  
+  .form-inline.carousel-frm .form-control,
+  .form-inline.carousel-frm .btn {
+    border-radius: 0 !important;
+    width: 100%;
+  }
+  
+  .form-inline.carousel-frm .row {
+    background: #fff;
+    margin: 0 !important;
+    width: 100%;
+  }
+  
+  .btn-search {
+    color: #fff !important;
+    background-color: #d81517;
+    border-color: #d81517;
+  }
+  
+  .cl-frm-search:parent {
+    padding: 0 !important;
+  }
+  
+  .cl-frm-search {
+    height: 3em;
+    line-height: 2em;
+  }
+  
+  .form-inline.carousel-frm .row .form-group.col-md-3:first-child {
+    padding: 0;
+  }
+  
+  @media (min-width: 576px) {
+    .form-inline.carousel-frm .row .form-group.col-md-3:last-child {
+      padding: 0;
+    }
+  }

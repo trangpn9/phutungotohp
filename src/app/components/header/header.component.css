@@ -1,0 +1,25 @@
+.top-bar {
+    border-bottom: 1px solid white;
+    padding: 0.5rem 0;
+  }
+  
+  .top-bar a {
+    color: white;
+    margin-right: 5px;
+  }
+  
+  .navbar-nav .nav-link {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2rem;    
+  }
+  
+  .navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255);
+  }
+  
+  .navbar-dark .navbar-nav .active>.nav-link,
+  .navbar-dark .navbar-nav .nav-link:hover {
+    color: #D81517;
+    font-weight: 500;
+  }

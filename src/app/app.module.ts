@@ -1,20 +1,26 @@
+import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent,    
-    HeaderComponent,    
-    FooterComponent,        
+    AppComponent,        
+    FooterComponent,             
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule,    
+    FontAwesomeModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,    
+  ],
+  exports: [    
   ],
   providers: [],
   bootstrap: [AppComponent]
