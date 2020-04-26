@@ -25,6 +25,8 @@ body.homePage header {
   background-image: url('./assets/img/bg_slide.jpg');
   padding-bottom: 2rem;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   width: 100%;
 }
 
@@ -726,4 +728,18 @@ label {
 .btn.button-cate:hover, .btn.button-cate.active {
   background: #D81517;
   color: #fff;
+}
+.zoom {  
+  margin: 0 auto;  
+  overflow: hidden;  
+}
+
+.zoom img {
+  transition: transform .2s;
+}
+
+.zoom:hover img {
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);          
 }

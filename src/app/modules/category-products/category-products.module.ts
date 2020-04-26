@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule, NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { CategoryProductsRoutingModule } from './category-products-routing.module';
 import { CategoryProductsComponent } from './category-products.component';
@@ -9,7 +10,9 @@ import { CategoryProductsComponent } from './category-products.component';
   declarations: [CategoryProductsComponent],
   imports: [
     CommonModule,
-    CategoryProductsRoutingModule
+    NgbModule,   
+    NgbTabsetModule,
+    CategoryProductsRoutingModule,
   ]
 })
 export class CategoryProductsModule { }

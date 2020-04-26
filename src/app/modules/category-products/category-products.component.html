@@ -26,21 +26,29 @@
     <!--End Title categroy-->
 
     <div class="container list-products">
-        <div class="row">
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
-            <div class="col-md-3 col-6 text-center" app-preview-product></div>
+        <div class="row" *ngIf="data.length > 0">
+            <div class="col-md-3 col-6 text-center" 
+                app-preview-product
+                *ngFor="let product of data"
+                [idSanPham]="product.id"
+                [slugSanPham]="product.slug"
+                [imgSanPham]="product.img === false ? './../../../assets/img/default-img-phutungsuzuki.jpg': product.img[0]"
+                [priceSanpham]="product.price"
+                [salePriceSanpham]="product.sale_price"
+                [titleSanpham]="product.title"
+            ></div>            
         </div>
     </div>
 
-    <nav aria-label="Component Pagination"
-        app-pagination
-    >
-    </nav>
+    <div class="col-12 d-flex justify-content-center mt-3" *ngIf="totalPage > 0">
+        <ngb-pagination
+          [collectionSize]="totalProduct"
+          [pageSize]="12"
+          [(page)]="currentPage"
+          [maxSize]="5"
+          [rotate]="true"        
+          [boundaryLinks]="true"
+          (pageChange)="pageLoad($event)"
+        ></ngb-pagination>
+    </div>
 </main>
