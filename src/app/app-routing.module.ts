@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
 import { SlideCategoryComponent } from './components/slide-category/slide-category.component';
+import { ShoppingComponent } from './modules/shopping/shopping.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'search', loadChildren: () => import('./modules/search-result/search-result.module').then(m => m.SearchResultModule) },
   { path: 'page', loadChildren: () => import('./modules/page-content/page-content.module').then(m => m.PageContentModule) },
   { path: 'post', loadChildren: () => import('./modules/post-content/post-content.module').then(m => m.PostContentModule) },
+  { path: 'thanh-toan', component: ShoppingComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
     HomeComponent,
     SlideshowComponent,
     SlideCategoryComponent,
+    ShoppingComponent,
   ],
   exports: [
     RouterModule,

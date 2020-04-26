@@ -8,22 +8,12 @@
 
 </header>
 
-<main role="main">
+<main role="main" *ngIf="data">
     <!--Title categroy-->
     <div class="container search-by-cate">
         <h1 class="tit-category">
-            <fa-icon [icon]="faCar"></fa-icon> Đèn pha trái Peugeot 3008 - 2017 - 8158CD592201
-        </h1>
-        <!-- <div class="row">
-            <div class="col">
-                <a class="btn button-cate active" href="#">Tất cả</a>
-                <a class="btn button-cate" href="#">Peugeot 5008</a>
-                <a class="btn button-cate" href="#">Peugeot 508</a>
-                <a class="btn button-cate" href="#">Peugeot 3008</a>
-                <a class="btn button-cate" href="#">Peugeot 3008 FL</a>
-                <a class="btn button-cate" href="#">Peugeot 408</a>
-            </div>
-        </div> -->
+            <fa-icon [icon]="faCar"></fa-icon> {{data['title']}}
+        </h1>        
     </div>
     <!--End Title categroy-->
 
@@ -31,26 +21,43 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="img-product">
-                    <img src="./assets/img/product-2.png" alt="product 1" class="img-fluid" />
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-3"><img src="./assets/img/product-2.png" alt="product 1"
-                                    class="img-fluid" /></div>
-                            <div class="col-3"><img src="./assets/img/product-2.png" alt="product 1"
-                                    class="img-fluid" /></div>
-                            <div class="col-3"><img src="./assets/img/product-2.png" alt="product 1"
-                                    class="img-fluid" /></div>
-                            <div class="col-3"><img src="./assets/img/product-2.png" alt="product 1"
-                                    class="img-fluid" /></div>
+                    <img [src]="imgPreview" [alt]="data['title']" class="img-fluid" />
+                    <div class="container" *ngIf="data['attechment'].length > 0">
+                        <div class="row justify-content-center">
+                            <div class="col-3">
+                                <img 
+                                    [src]="data['img'][0]" 
+                                    alt="product gallery"
+                                    class="img-fluid img-gallery"
+                                    (click)="changeImgPreview(data['img'][0])"
+                                 />
+                            </div>
+                            <div class="col-3" *ngFor="let itemGallerry of data['attechment'] ">
+                                <img 
+                                    [src]="itemGallerry" 
+                                    alt="product gallery"
+                                    class="img-fluid img-gallery" 
+                                    (click)="changeImgPreview(itemGallerry)"
+                                />
+                            </div>                            
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 tit-content-dt-product text-center">
-                            <h4 class="tit-dt-product">Đèn pha trái Peugeot 3008 - 2017</h4>
-                            <h4 class="ma-dt-product">8158CD592201</h4>
+                            <h4 class="tit-dt-product">{{data['title']}}</h4>
+                            <!-- <h4 class="ma-dt-product">8158CD592201</h4> -->
                         </div>
                         <div class="col-6 price-dt-prduct text-right">Giá: Liên Hệ</div>
-                        <div class="col-6 add-to-cart text-left"><button class="btn site-button">Đặt mua</button></div>
+                        <div class="col-6 add-to-cart text-left">
+                            <button
+                                class="btn site-button"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                (click)="addToCart(dangerTpl)"
+                            >
+                                Đặt mua
+                            </button>
+                        </div>
                     </div>
                     <div class="des-add-to-cart">
                         <ul>
@@ -67,31 +74,37 @@
                 </div>
             </div>
             <div class="col-md-7 main-ds-content-product">
-                <h2 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> Đèn pha trái Peugeot 3008 - 2017 - 8158CD592201</h2>
-                <p class="m-tb20"><strong>VHP Auto</strong> is simply dummy text of the print ing and in type setting
-                    industry. Lorem Ipsum has bee the industry's standard...</p>
+                <!-- <h2 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> {{data['title']}}</h2> -->
+                <div 
+                    [innerHTML]="data['content'] | renderHtml"
+                    class="mb-4"
+                ></div>
                 <div class="row">
                     <div class="col-md-7 col-12">
                         <table class="table table-hover">
                             <tbody>
                                 <tr>
                                     <td>Mã sản phẩm</td>
-                                    <th>8158CD592201</th>
+                                    <th>{{data['pa_ma-san-pham'][0]['name']}}</th>
                                 </tr>
                                 <tr>
                                     <td>Tên sảm phẩm</td>
                                     <td>
-                                        <h3>Đèn pha trái Peugeot 3008 - 2017</h3>
+                                        <h3>{{data['pa_ten-san-pham'][0]['name']}}</h3>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Thương hiệu</td>
-                                    <td>Peugeot</td>
+                                    <td>{{data['pa_thuong-hieu'][0]['name']}}</td>
                                 </tr>
                                 <tr>
                                     <td>Xuất xứ</td>
-                                    <th>Chính hãng</th>
+                                    <th>{{data['pa_xuat-xu'][0]['name']}}</th>
                                 </tr>
+                                <tr>
+                                    <td>Dùng cho xe</td>
+                                    <th>{{data['pa_dung-cho-xe'][0]['name']}}</th>
+                                </tr>                                
                             </tbody>
                         </table>
                         <img src="./assets/img/btn-facebook.png" alt="Like Facebook" class="img-fluid" />
@@ -107,7 +120,7 @@
                 <div class="row comment-facebook">
                     <img src="./assets/img/comment-facebook.png" class="img-fluid" alt="Comment Facebook" />
                 </div>
-                <div class="row car-use">
+                <!-- <div class="row car-use">
                     <div class="col-12">
                         <h3 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> Đèn pha trái Peugeot 3008 - 2017
                             -
@@ -139,84 +152,46 @@
                             </tr>
                         </table>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-    </div>
+    </div> 
 
     <!-- San pham cung loai -->
-    <div class="container list-products">
-        <h3 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> Sản phẩm cùng loại</h3>
-        <div class="row">
-            <div class="col-md-3 col-6 text-center cate1">
-                <img src="./assets/img/product-1.png" alt="Title Product" class="img-fluid">
+    <div class="container list-products mt-4">
+        <h3 class="tit-category tit-product" *ngIf="relateProducts.length > 0"><fa-icon [icon]="faCar"></fa-icon> Sản phẩm cùng loại</h3>
+        <div class="row" *ngIf="relateProducts.length > 0">
+            <div class="col-md-3 col-6 text-center cate1 zoom" *ngFor="let product of relateProducts">
+                <a class="wrap-img-viewed" [routerLink]="['/san-pham/detail', product.id, product.slug]">
+                    <img 
+                        [src]="product.img === false ? './../../../assets/img/default-img-phutungsuzuki.jpg' : product.img[0]"
+                        [alt]="product.title"
+                        class="img-fluid"
+                    />
+                </a>
                 <div class="info-product">
                     <p class="line-img-product"></p>
-                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                    <a class="titleSP-product" [routerLink]="['/san-pham/detail', product.id, product.slug]">
+                        {{product.title | truncateTitle:8}}
+                    </a>
                 </div>
                 <p class="price">Giá: Liên hệ</p>
-            </div>
-            <div class="col-md-3 col-6 text-center cate2">
-                <img src="./assets/img/product-2.png" alt="Title Product" class="img-fluid">
-                <div class="info-product">
-                    <p class="line-img-product"></p>
-                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
-                </div>
-                <p class="price">Giá: Liên hệ</p>
-            </div>
-            <div class="col-md-3 col-6 text-center cate3">
-                <img src="./assets/img/product-3.png" alt="Title Product" class="img-fluid">
-                <div class="info-product">
-                    <p class="line-img-product"></p>
-                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
-                </div>
-                <p class="price">Giá: Liên hệ</p>
-            </div>
-            <div class="col-md-3 col-6 text-center cate4">
-                <img src="./assets/img/product-4.png" alt="Title Product" class="img-fluid">
-                <div class="info-product">
-                    <p class="line-img-product"></p>
-                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
-                </div>
-                <p class="price">Giá: Liên hệ</p>
-            </div>
+            </div>            
         </div>
 
         <!-- San pham da xem -->
-        <h3 class="tit-category tit-product"><fa-icon [icon]="faCar"></fa-icon> Sản phẩm đã xem</h3>
-        <div class="row">
-            <div class="col-md-3 col-6 text-center cate1">
-                <img src="./assets/img/product-1.png" alt="Title Product" class="img-fluid">
+        <h3 class="tit-category tit-product" *ngIf="viewedProducts.length > 0"><fa-icon [icon]="faCar"></fa-icon> Sản phẩm đã xem</h3>
+        <div class="row" *ngIf="viewedProducts.length > 0">
+            <div class="col-md-3 col-6 text-center cate1 zoom" *ngFor="let product of viewedProducts">
+                <a class="wrap-img-viewed" [routerLink]="['/san-pham/detail', product.id, product.slug]">
+                    <img [src]="product.img === false ? './../../../assets/img/default-img-phutungsuzuki.jpg' : product.img[0]" [alt]="product.title" class="img-fluid">
+                </a>
                 <div class="info-product">
                     <p class="line-img-product"></p>
-                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
+                    <a class="titleSP-product" [routerLink]="['/san-pham/detail', product.id, product.slug]">{{product.title | truncateTitle}}</a>
                 </div>
                 <p class="price">Giá: Liên hệ</p>
-            </div>
-            <div class="col-md-3 col-6 text-center cate2">
-                <img src="./assets/img/product-2.png" alt="Title Product" class="img-fluid">
-                <div class="info-product">
-                    <p class="line-img-product"></p>
-                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
-                </div>
-                <p class="price">Giá: Liên hệ</p>
-            </div>
-            <div class="col-md-3 col-6 text-center cate3">
-                <img src="./assets/img/product-3.png" alt="Title Product" class="img-fluid">
-                <div class="info-product">
-                    <p class="line-img-product"></p>
-                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
-                </div>
-                <p class="price">Giá: Liên hệ</p>
-            </div>
-            <div class="col-md-3 col-6 text-center cate4">
-                <img src="./assets/img/product-4.png" alt="Title Product" class="img-fluid">
-                <div class="info-product">
-                    <p class="line-img-product"></p>
-                    <a class="titleSP-product" href="#">8158CD592201<br />Đèn pha trái Peugeot 3008 - 2017</a>
-                </div>
-                <p class="price">Giá: Liên hệ</p>
-            </div>
+            </div>            
         </div>
     </div>
 
@@ -358,3 +333,10 @@
             </div>          
       </div>
 </main>
+
+<ng-template #dangerTpl>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" width="24" height="24" viewBox="0 0 24 24"><path d="M10.872 6.831l1.695 3.904 3.654-1.561-1.79 3.426 3.333.954-3.417 1.338 2.231 4.196-4.773-2.582-2.869 2.287.413-3.004-3.792-.726 2.93-1.74-1.885-2.512 3.427.646.843-4.626zm-.786-6.831l-1.665 9.119-6.512-1.228 3.639 4.851-5.548 3.294 7.108 1.361-.834 6.076 5.742-4.577 9.438 5.104-4.288-8.064 6.834-2.677-6.661-1.907 3.25-6.22-6.98 2.982-3.523-8.114z"/></svg>
+    Thêm SP: {{data['title']}}
+</ng-template>
+
+<!-- <app-toasts aria-live="polite" aria-atomic="true"></app-toasts> -->

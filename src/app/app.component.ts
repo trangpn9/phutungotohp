@@ -3,6 +3,8 @@ import { ScrollAutoService } from './services/scroll-auto.service';
 import { GetDataProductService } from './services/get-data-product.service';
 import { CommonService } from './services/common.service';
 
+import { faShoppingCart, faDollarSign, faCloudRain } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,8 +12,11 @@ import { CommonService } from './services/common.service';
 })
 export class AppComponent implements OnInit {  
 
-  dataShopping: any[] = [];
-  totalMoney: number = 0;
+  dataShopping: any[] = [];  
+
+  faShoppingCart = faShoppingCart;
+  faDollarSign = faDollarSign;
+  faCloudRain = faCloudRain;  
 
   constructor(
     private _scrollService: ScrollAutoService,
@@ -27,20 +32,13 @@ export class AppComponent implements OnInit {
       this._commonService.setDataShoppingCart(getShoppingList);
     }    
     this._commonService.getShopping.subscribe((data: any[]) => {
-      this.dataShopping = [...data];
-      if (data.length > 0) {
-        this.totalMoney = 0;
-        data.forEach(item => {
-          this.totalMoney += ( parseInt(item['price']) * item['quantity']);          
-        });        
-      }
+      this.dataShopping = [...data];      
     });
     
     const dataProducts = this._commonService.getAllProducts.value;
 
     if (dataProducts.length === 0) {
-      this._getDataProduct.getFulldata().subscribe((data:any) => { 
-        console.log('dataProduct: ', data);       
+      this._getDataProduct.getFulldata().subscribe((data:any) => {              
         this._commonService.setAllProducts([...data]);        
       }, (err) => {
         console.log('ERRORS: ', err);

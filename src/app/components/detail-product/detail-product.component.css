@@ -133,3 +133,13 @@
     }
 }
 /*End Huong dan thanh toan*/
+.img-gallery {
+    cursor: pointer;
+}
+.btn.site-button:hover {
+    color: #fff !important;
+}
+.wrap-img-viewed {
+    display: block;
+    overflow: hidden;
+}

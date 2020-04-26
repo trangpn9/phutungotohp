@@ -41,8 +41,7 @@ export class CategoryProductsComponent implements OnInit {
     });
 
     this._getDataProductService.getPaginateProduct().subscribe((data: any) => {      
-      const {total_page, total_product} = data;
-      console.log('totalPage: ', data);
+      const {total_page, total_product} = data;      
       this.totalPage = total_page;
       this.totalProduct = total_product;
     });

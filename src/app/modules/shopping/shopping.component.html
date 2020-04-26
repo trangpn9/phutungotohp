@@ -1,0 +1,106 @@
+<header>
+    
+    <app-header></app-header>
+
+    <app-breadcrumb></app-breadcrumb>
+
+    <app-search></app-search>
+
+</header>
+
+<div id="wrapPay" class="container">
+    <h1 class="tit-category">
+        <fa-icon [icon]="faCar"></fa-icon> Thông tin đặt hàng
+    </h1>   
+    <div class="table-responsive-sm" *ngIf="dataShopping.length > 0">
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-secondary">
+                    <th scope="col">#</th>
+                    <th scope="col">Hình ảnh</th>
+                    <th scope="col">Tên SP</th>
+                    <th scope="col">Đơn giá</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Thành tiền (VNĐ)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let itemProductCart of dataShopping; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                        <img width="30" [alt]="itemProductCart['title']" [src]="itemProductCart['img']" />
+                    </td>
+                    <td>{{ itemProductCart["title"] }}</td>
+                    <td>Liên hệ</td>
+                    <td>{{ itemProductCart["quantity"] }}</td>
+                    <td>Liên hệ</td>
+                </tr>
+                <tr>
+                    <td colspan="5"><strong class="float-right">Tổng tiền: </strong></td>
+                    <td>Liên hệ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <form class="row">
+        <div class="col-md-8">
+            <div class="form-group row">
+                <label for="staticEmail" class="col-sm-2 col-form-label">Họ tên</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="staticName" placeholder="Họ tên người nhận hàng!" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Điện thoại</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="inputTel" placeholder="Số điện thoại nhận hàng!" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Địa chỉ</label>
+                <div class="col-sm-10">
+                    <input type="tel" class="form-control" id="inputAddress" placeholder="Địa chỉ nhận hàng!" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-success" routerLink="/">
+                <fa-icon [icon]="faRandom"></fa-icon>&nbsp;Gửi thông tin đặt hàng!
+            </button>
+        </div>
+    </form>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <fa-icon [icon]="faCompressArrowsAlt"></fa-icon>&nbsp;Chính sách giao hàng!
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    Loading...
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">
+                        <fa-icon [icon]="faCompressArrowsAlt"></fa-icon>&nbsp;Chính sách đổi trả!
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    Loading...
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

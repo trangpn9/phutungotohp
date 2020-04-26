@@ -1,3 +1,77 @@
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
+
+<!-- The Modal -->
+<div class="modal fade bd-example-modal-xl" id="myModal">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title text-danger">
+                    <fa-icon [icon]="faShoppingCart"></fa-icon> Giỏ hàng
+                </h4>
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">                
+                <div class="table-responsive-sm" *ngIf="dataShopping.length > 0">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">#</th>
+                                <th scope="col">Hình ảnh</th>
+                                <th scope="col">Tên SP</th>
+                                <th scope="col">Đơn giá</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Thành tiền (VNĐ)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let itemProductCart of dataShopping; index as i">
+                                <th scope="row">{{i + 1}}</th>
+                                <td>
+                                    <img width="30" 
+                                        [alt]="itemProductCart['title']" 
+                                        [src]="itemProductCart['img'] ? itemProductCart['img'] : './../assets/img/default-img-phutungsuzuki.jpg'"
+                                    />
+                                </td>
+                                <td>{{itemProductCart['title']}}</td>
+                                <td>Liên hệ</td>
+                                <td>{{itemProductCart['quantity']}}</td>
+                                <td>Liên hệ</td>
+                            </tr>                            
+                            <tr>                                
+                                <td colspan="5"><strong class="float-right">Tổng tiền: </strong></td>
+                                <td>Liên hệ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div *ngIf="dataShopping.length === 0" class="alert alert-warning" role="alert">
+                    Chưa có sản phẩm nào được chọn!
+                </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    <fa-icon [icon]="faCloudRain"></fa-icon>&nbsp;Quay lại
+                </button>
+                <a 
+                    routerLink="/thanh-toan" 
+                    type="button" 
+                    class="btn btn-success" 
+                    data-dismiss="modal"
+                    *ngIf="dataShopping.length > 0"
+                >
+                    <fa-icon [icon]="faDollarSign"></fa-icon> &nbsp;Thanh toán
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
