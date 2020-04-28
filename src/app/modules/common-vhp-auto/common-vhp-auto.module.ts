@@ -27,6 +27,7 @@ import { PaginationComponent } from './../../components/pagination/pagination.co
     FontAwesomeModule,
   ],
   exports: [
+    CommonModule,
     RouterModule,
     RenderHtmlPipe,
     TruncateTitlePipe,

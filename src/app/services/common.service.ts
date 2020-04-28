@@ -14,6 +14,7 @@ export class CommonService {
   public getAllProducts = new BehaviorSubject<any[]>([]);
   public getAllPosts = new BehaviorSubject<any[]>([]);
   public getShopping = new BehaviorSubject<any[]>([]);
+  public getProductsSearch = new BehaviorSubject<any[]>([]);
 
   constructor() { }
 
@@ -82,5 +83,9 @@ export class CommonService {
 
   remove(toast) {
     return this.toasts = this.toasts.filter(t => t !== toast);
+  }
+
+  setProductsSearch(data: any[]) {
+    return this.getProductsSearch.next([...data]);
   }
 }

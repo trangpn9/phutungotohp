@@ -41,6 +41,7 @@ const appRoutes: Routes = [
     ShoppingComponent,
   ],
   exports: [
+    CommonModule,
     RouterModule,
   ]
 })

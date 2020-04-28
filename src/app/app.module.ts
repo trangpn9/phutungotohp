@@ -20,7 +20,8 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserAnimationsModule,
     AppRoutingModule,    
   ],
-  exports: [    
+  exports: [ 
+    BrowserModule,   
   ],
   providers: [],
   bootstrap: [AppComponent]
