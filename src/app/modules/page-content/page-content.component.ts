@@ -34,7 +34,8 @@ export class PageContentComponent implements OnInit {
       const idPage = params['id'];
       this.slug = params['slug'];      
       this._getDataPageDetail.getPageDetailById(idPage).subscribe((data: any) => {
-        this.data = {...data};     
+        this.data = {...data};    
+        this.title.setTitle(this.data['title']['rendered']  + ' | VHP Auto - Hà Nội'); 
       });
     });
   }

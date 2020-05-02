@@ -11,11 +11,13 @@ import { BreadcrumbComponent } from './../../components/breadcrumb/breadcrumb.co
 import { PreviewProductComponent } from './../../components/preview-product/preview-product.component';
 import { PaginationComponent } from './../../components/pagination/pagination.component';
 import { PaymentComponent } from './../../components/payment/payment.component';
+import { PageNotFoundComponent } from './../../components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     RenderHtmlPipe,
     TruncateTitlePipe,
+    PageNotFoundComponent,
     HeaderComponent,
     SearchComponent,
     BreadcrumbComponent,
@@ -32,6 +34,7 @@ import { PaymentComponent } from './../../components/payment/payment.component';
     CommonModule,
     RouterModule,
     RenderHtmlPipe,
+    PageNotFoundComponent,
     TruncateTitlePipe,
     FontAwesomeModule,
     HeaderComponent,

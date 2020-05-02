@@ -8,30 +8,19 @@
 
 </header>
 
-<main role="main" *ngIf="data; else loading">
+<main role="main">
     <!--Title-->
     <div class="container search-by-cate">
         <h2 class="tit-category">
-            <fa-icon [icon]="faCar"></fa-icon>&nbsp;&nbsp;<span [innerHTML]="data['title']['rendered']"></span>
+            <fa-icon [icon]="faCar"></fa-icon>&nbsp;&nbsp;Liên hệ
         </h2>
     </div>
     <!--End Title-->
 
     <div class="container">
         <div class="row">
-            <div class="col" [innerHTML]="data['content']['rendered'] | renderHtml"></div>
         </div>
     </div>  
-       
+    
 </main>
-
-<ng-template #loading>
-    <div class="container loading d-flex justify-content-center align-items-center" style="min-height: 350px;">
-        <div class="spinner-grow text-primary" role="status"></div>
-        <div class="spinner-grow text-secondary" role="status"></div>
-        <div class="spinner-grow text-success" role="status"></div>
-        <div class="spinner-grow text-danger" role="status"></div>
-        <div class="spinner-grow text-warning" role="status"></div>
-        <div class="spinner-grow text-info" role="status"></div>
-    </div>
-</ng-template>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6183745128933!2d105.85587951496147!3d21.007929393864888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5b614af063%3A0x4fe3abdc0d73b4be!2zQ1RZIFROSEggWE5LIHbDoCBLRCBWSFAgLVBo4bulIHTDuW5nIMO0IHTDtCBIxrBuZyBQaMOhdA!5e0!3m2!1svi!2s!4v1588413290314!5m2!1svi!2s" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
