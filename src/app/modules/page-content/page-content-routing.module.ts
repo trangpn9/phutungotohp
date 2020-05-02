@@ -4,7 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageContentComponent } from './page-content.component';
 import { CommonVhpAutoModule } from '../common-vhp-auto/common-vhp-auto.module';
 
-const routes: Routes = [{ path: '', component: PageContentComponent }];
+const routes: Routes = [
+  { path: ':id/:slug', component: PageContentComponent }
+];
 
 @NgModule({
   imports: [

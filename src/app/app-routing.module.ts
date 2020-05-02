@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { SlideshowComponent } from './components/slideshow/slideshow.component';
 import { SlideCategoryComponent } from './components/slide-category/slide-category.component';
 import { ShoppingComponent } from './modules/shopping/shopping.component';
+import { LienHeComponent } from './components/lien-he/lien-he.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
   { path: 'page', loadChildren: () => import('./modules/page-content/page-content.module').then(m => m.PageContentModule) },
   { path: 'post', loadChildren: () => import('./modules/post-content/post-content.module').then(m => m.PostContentModule) },
   { path: 'thanh-toan', component: ShoppingComponent },
+  { path: 'lien-he', component: LienHeComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
@@ -39,6 +41,7 @@ const appRoutes: Routes = [
     SlideshowComponent,
     SlideCategoryComponent,
     ShoppingComponent,
+    LienHeComponent,
   ],
   exports: [
     CommonModule,
