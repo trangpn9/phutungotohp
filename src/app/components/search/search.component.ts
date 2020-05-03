@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { CommonService } from './../../services/common.service';
 
 @Component({
@@ -8,24 +8,39 @@ import { CommonService } from './../../services/common.service';
 })
 export class SearchComponent implements OnInit {
 
+  private wasInside = false;
+
   isShowResult: boolean = false;
   listNoteProductSearch: any[] = [];
 
   constructor(
-    private _commonService: CommonService
+    private _commonService: CommonService,
+    private eRef: ElementRef,
   ) { }
 
   ngOnInit() {
   }
+
+  @HostListener('click')
+  clickInside() {    
+    this.wasInside = true;
+    this.isShowResult = true;
+  }
+  
+  @HostListener('document:click')
+  clickout() {
+    if (!this.wasInside) {      
+      this.isShowResult = false;
+    }
+    this.wasInside = false;
+  }
+
 
   searchProduct(code: any, name: any) {    
     this.listNoteProductSearch = [];
     let checkCode = code.value.toLowerCase().trim();
     let checkName = name.value.toLowerCase().trim();
     let listProductSearch: any[] = [];
-
-    console.log('code: ', checkCode);
-    console.log('name: ', checkName);
 
     if (checkCode !== '' || checkName !== '') {
       this.isShowResult = true;
@@ -48,12 +63,10 @@ export class SearchComponent implements OnInit {
             }          
           }
         });
-
-        console.log('list product search: ', listProductSearch);
+        
         if (listProductSearch.length > 0) {
           const [product_1 = null, product_2 = null, product_3 = null, product_4 = null, product_5 = null] = listProductSearch;
-          this.listNoteProductSearch = [product_1, product_2, product_3, product_4, product_5];
-          console.log('note product: ', this.listNoteProductSearch);
+          this.listNoteProductSearch = [product_1, product_2, product_3, product_4, product_5];          
         }
       });
     }
