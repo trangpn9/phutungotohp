@@ -33,51 +33,19 @@
                         <h4 class="m-b15 text-uppercase">Tin tức VHP Auto </h4>
                         <div class="dlab-separator"></div>
                         <div class="widget-post-bx">
-                            <div class="widget-post clearfix">
-                                <div class="dlab-post-media"> <img src="./../../../assets/img/pic1.jpg" alt="" width="200" height="143">
+                            <div class="widget-post clearfix" *ngFor="let post of listPost">
+                                <div class="float-left">
+                                    <img 
+                                        [src]="post['_embedded']['wp:featuredmedia'][0]['source_url']" 
+                                        [alt]="post['title']['rendered']" width="80"
+                                    />
                                 </div>
                                 <div class="dlab-post-info">
                                     <div class="dlab-post-header">
-                                        <h5><a routerLink="/page">Time to change...</a></h5>
-                                    </div>
-                                    <div class="dlab-post-meta">
-                                        <ul>
-                                            <li class="post-author">By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                        </ul>
-                                    </div>
+                                        <h5><a [routerLink]="['/post/' + post['id'] + '/' + post['slug']]">{{post['title']['rendered']}}</a></h5>
+                                    </div>                                    
                                 </div>
-                            </div>
-                            <div class="widget-post clearfix">
-                                <div class="dlab-post-media"> <img src="./../../../assets/img/pic2.jpg" alt="" width="200" height="160">
-                                </div>
-                                <div class="dlab-post-info">
-                                    <div class="dlab-post-header">
-                                        <h5><a routerLink="/page">Time to change...</a></h5>
-                                    </div>
-                                    <div class="dlab-post-meta">
-                                        <ul>
-                                            <li class="post-author">By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget-post clearfix">
-                                <div class="dlab-post-media"> <img src="./../../../assets/img/pic3.jpg" alt="" width="200" height="160">
-                                </div>
-                                <div class="dlab-post-info">
-                                    <div class="dlab-post-header">
-                                        <h5><a routerLink="/page">Time to change...</a></h5>
-                                    </div>
-                                    <div class="dlab-post-meta">
-                                        <ul>
-                                            <li class="post-author">By Admin</li>
-                                            <li class="post-comment"><i class="fa fa-comments"></i> 28</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>                            
                         </div>
                     </div>
                 </div>
