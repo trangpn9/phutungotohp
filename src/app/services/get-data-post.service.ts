@@ -25,4 +25,12 @@ export class GetDataPostService {
   getListPostsHome() {    
     return this.http.get(`${AppSetting.API_SERVICE}wp/v2/posts?categories=1&per_page=3&_embed`);
   }
+
+  /**
+   * Get list post in page tin tuc
+   * @param page number page
+   */
+  getListPostPerpage(page: any = 1) {    
+    return this.http.get(`${AppSetting.API_SERVICE}wp/v2/posts?categories=1&page=${page}&per_page=12&_embed`);
+  }
 }

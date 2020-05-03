@@ -22,11 +22,7 @@ export class FooterComponent implements OnInit {
 
   ngOnInit() {
     this._getListPost.getListPostsHome().subscribe((data: any) => {
-      this.listPost = [...data];
-      console.log('listPost: ', this.listPost);
-      
+      this.listPost = [...data];            
     });
-  }
-
-  //_embedded -> wp:featuredmedia  -> source_url
+  }  
 }

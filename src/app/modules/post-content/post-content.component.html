@@ -1,5 +1,5 @@
 <header>
-    
+
     <app-header></app-header>
 
     <app-breadcrumb></app-breadcrumb>
@@ -8,20 +8,64 @@
 
 </header>
 
-<main role="main">    
-    <!--Title categroy-->                
+<main role="main" class="mb-5" *ngIf="data; else loading">
+    <!--Title categroy-->
     <div class="container search-by-cate">
-        <h2 class="tit-category"><fa-icon [icon]="faCar"></fa-icon> Dữ liệu đang cập nhật...</h2>                         
+        <h1 class="tit-category">
+            <fa-icon [icon]="faCar"></fa-icon> Tin tức
+        </h1>
     </div>
     <!--End Title categroy-->
 
     <div class="container list-products">
         <div class="row">
-            
+            <div class="col-md-4 mb-3" *ngFor="let post of data;">
+                <div class="card zoom">
+                    <a 
+                        [routerLink]="['/post/' + post['id'] + '/' + post['slug']]"
+                        [title]="post['title']['rendered']"
+                    >
+                        <img 
+                            class="card-img-top" 
+                            [src]="post['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['thumbnail']['source_url']"
+                            [alt]="post['title']['rendered']"
+                        />
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a 
+                                [routerLink]="['/post/' + post['id'] + '/' + post['slug']]"
+                                [title]="post['title']['rendered']"
+                            >
+                                {{post['title']['rendered'] | truncateTitle:12}}
+                            </a>
+                        </h5>                        
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            <a 
+                                [routerLink]="['/post/' + post['id'] + '/' + post['slug']]"
+                                [title]="post['title']['rendered']"
+                            >
+                                Chi tiết >> 
+                            </a>
+                        </small>
+                        <small class="text-muted float-right">Tin tức</small>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <!-- <nav aria-label="Component Pagination"
-        app-pagination
-    </nav> -->
+    </div>    
 </main>
+
+<ng-template #loading>
+    <div class="container loading d-flex justify-content-center align-items-center" style="min-height: 350px;">
+        <div class="spinner-grow text-primary" role="status"></div>
+        <div class="spinner-grow text-secondary" role="status"></div>
+        <div class="spinner-grow text-success" role="status"></div>
+        <div class="spinner-grow text-danger" role="status"></div>
+        <div class="spinner-grow text-warning" role="status"></div>
+        <div class="spinner-grow text-info" role="status"></div>
+    </div>
+</ng-template>
+

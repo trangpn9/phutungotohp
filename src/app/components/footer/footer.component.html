@@ -35,15 +35,28 @@
                         <div class="widget-post-bx">
                             <div class="widget-post clearfix" *ngFor="let post of listPost">
                                 <div class="float-left">
-                                    <img 
-                                        [src]="post['_embedded']['wp:featuredmedia'][0]['source_url']" 
-                                        [alt]="post['title']['rendered']" width="80"
-                                    />
+                                    <a 
+                                        [routerLink]="['/post/' + post['id'] + '/' + post['slug']]"
+                                        [title]="post['title']['rendered']"
+                                    >
+                                        <img 
+                                            [src]="post['_embedded']['wp:featuredmedia'][0]['media_details']['sizes']['thumbnail']['source_url']" 
+                                            [alt]="post['title']['rendered']" width="80"
+                                        />
+                                    </a>
                                 </div>
                                 <div class="dlab-post-info">
                                     <div class="dlab-post-header">
-                                        <h5><a [routerLink]="['/post/' + post['id'] + '/' + post['slug']]">{{post['title']['rendered']}}</a></h5>
+                                        <h5 class="text-justify">
+                                            <a 
+                                                [routerLink]="['/post/' + post['id'] + '/' + post['slug']]"
+                                                [title]="post['title']['rendered']"
+                                            >
+                                                {{post['title']['rendered'] | truncateTitle:12}}
+                                            </a>
+                                        </h5>
                                     </div>                                    
+                                    <p class="mb-0">Tin tức / Tư vấn</p>
                                 </div>
                             </div>                            
                         </div>
@@ -93,9 +106,9 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6 text-left"> © Copyright 2020 - VHP Auto</div>
                 <div class="col-md-6 col-sm-6 text-right ">
-                    <a href="#"> Giới thiệu</a> |
-                    <a href="#"> Liên hệ</a> |
-                    <a href="#"> Tuyển dụng</a>
+                    <a routerLink="/page/73/gioi-thieu"> Giới thiệu</a> |
+                    <a routerLink="/lien-he"> Liên hệ</a> |
+                    <a routerLink="/"> Tuyển dụng</a>
                 </div>
             </div>
         </div>

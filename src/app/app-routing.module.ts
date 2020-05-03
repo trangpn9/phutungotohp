@@ -48,6 +48,7 @@ const appRoutes: Routes = [
   exports: [
     CommonModule,
     RouterModule,
+    CommonVhpAutoModule,
   ]
 })
 export class AppRoutingModule { }
