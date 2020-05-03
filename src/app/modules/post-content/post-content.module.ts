@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { PostContentRoutingModule } from './post-content-routing.module';
 import { PostContentComponent } from './post-content.component';
 
-
 @NgModule({
-  declarations: [PostContentComponent],
+  declarations: [
+    PostContentComponent,
+  ],
   imports: [
     CommonModule,
     PostContentRoutingModule
