@@ -6,6 +6,7 @@ import { Title, Meta } from '@angular/platform-browser';
 
 import { CommonService } from './../../services/common.service';
 import { GetDataProductService } from './../../services/get-data-product.service';
+import { GetDataPageService } from './../../services/get-data-page.service';
 
 @Component({
   selector: 'app-detail-product',
@@ -17,6 +18,7 @@ export class DetailProductComponent implements OnInit {
   faCar = faCar;
 
   data: any;  
+  acf: any;
   imgPreview: string;
   relateProducts: any[] = [];
   viewedProducts: any[] = []; // List viewed products
@@ -27,6 +29,7 @@ export class DetailProductComponent implements OnInit {
     @Inject(DOCUMENT) private _document: Document,
     private route: ActivatedRoute,
     private _getDataProduct: GetDataProductService,
+    private _getDataPageDetail: GetDataPageService,
     private _commonService: CommonService,
     private title: Title,
     private meta: Meta,
@@ -92,6 +95,11 @@ export class DetailProductComponent implements OnInit {
           console.log('ERRORS: ', err);
         });
       }
+    });
+
+    this._getDataPageDetail.getPageDetailById('1190').subscribe((data: any) => {      
+      const { acf } = data;
+      this.acf = acf;
     });
   }
 

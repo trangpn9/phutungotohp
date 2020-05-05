@@ -12,6 +12,7 @@ import { PreviewProductComponent } from './../../components/preview-product/prev
 import { PaginationComponent } from './../../components/pagination/pagination.component';
 import { PaymentComponent } from './../../components/payment/payment.component';
 import { PageNotFoundComponent } from './../../components/page-not-found/page-not-found.component';
+import { PreLoadingComponent } from './../../components/pre-loading/pre-loading.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PageNotFoundComponent } from './../../components/page-not-found/page-no
     PreviewProductComponent,
     PaginationComponent,
     PaymentComponent,
+    PreLoadingComponent,
   ],
   imports: [
     CommonModule,
@@ -43,6 +45,7 @@ import { PageNotFoundComponent } from './../../components/page-not-found/page-no
     PreviewProductComponent,
     PaginationComponent,
     PaymentComponent,
+    PreLoadingComponent,
   ]
 })
 export class CommonVhpAutoModule { }

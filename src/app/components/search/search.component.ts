@@ -21,12 +21,6 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  @HostListener('click')
-  clickInside() {    
-    this.wasInside = true;
-    this.isShowResult = true;
-  }
-  
   @HostListener('document:click')
   clickout() {
     if (!this.wasInside) {      
@@ -69,11 +63,10 @@ export class SearchComponent implements OnInit {
           this.listNoteProductSearch = [product_1, product_2, product_3, product_4, product_5];          
         }
       });
-    }
-    
+    }    
   } 
 
-  outFocus() {
+  outFocus() {    
     this.isShowResult = false;
   }
 

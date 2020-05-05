@@ -198,7 +198,12 @@
     </div>
 
     <!-- Huong Dan mua hang -->
-    <div class="container" app-payment></div>
+    <div 
+        class="container"
+        *ngIf="acf" 
+        [acf]="acf"
+        app-payment
+    ></div>
 </main>
 
 <ng-template #dangerTpl>
@@ -209,12 +214,5 @@
 <!-- <app-toasts aria-live="polite" aria-atomic="true"></app-toasts> -->
 
 <ng-template #loading>
-    <div class="container loading d-flex justify-content-center align-items-center" style="min-height: 350px;">
-        <div class="spinner-grow text-primary" role="status"></div>
-        <div class="spinner-grow text-secondary" role="status"></div>
-        <div class="spinner-grow text-success" role="status"></div>
-        <div class="spinner-grow text-danger" role="status"></div>
-        <div class="spinner-grow text-warning" role="status"></div>
-        <div class="spinner-grow text-info" role="status"></div>
-    </div>
+    <app-pre-loading></app-pre-loading>
 </ng-template>

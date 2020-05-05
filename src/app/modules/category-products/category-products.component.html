@@ -10,11 +10,11 @@
 
 </header>
 
-<main role="main">    
+<main role="main" *ngIf="data.length > 0; else loading">    
     <!--Title categroy-->                
     <div class="container search-by-cate">
-        <h2 class="tit-category"><fa-icon [icon]="faCar"></fa-icon> Tìm phụ tùng theo xe</h2>     
-        <div class="row">
+        <h1 class="tit-category"><fa-icon [icon]="faCar"></fa-icon> {{titleShow}}</h1>     
+        <div class="row" *ngIf="isSearch === false">
           <div class="col">
             <a class="btn button-cate active" href="#">Tất cả</a>
             <!-- <a class="btn button-cate" href="#">Peugeot 5008</a>
@@ -29,16 +29,37 @@
 
     <div class="container list-products">
         <div class="row" *ngIf="data.length > 0">
-            <div class="col-md-3 col-6 text-center" 
-                app-preview-product
-                *ngFor="let product of data"
-                [idSanPham]="product.id"
-                [slugSanPham]="product.slug"
-                [imgSanPham]="product.img === false ? './../../../assets/img/default-img-phutungsuzuki.jpg': product.img[0]"
-                [priceSanpham]="product.price"
-                [salePriceSanpham]="product.sale_price"
-                [titleSanpham]="product.title"
-            ></div>            
+            <ng-container *ngIf="isSearch === false">
+                <div class="col-md-3 col-6 text-center"                 
+                    app-preview-product
+                    *ngFor="let product of data"
+                    [idSanPham]="product.id"
+                    [slugSanPham]="product.slug"
+                    [imgSanPham]="product.img === false ? './../../../assets/img/default-img-phutungsuzuki.jpg': product.img[0]"
+                    [priceSanpham]="product.price"
+                    [salePriceSanpham]="product.sale_price"
+                    [titleSanpham]="product.title"
+                ></div>            
+            </ng-container>
+
+            <ng-container *ngIf="searchResultEmpty === true; else searchResult">
+                <div 
+                    class="col-12 alert alert-danger"                    
+                >{{data[0]}}</div>
+            </ng-container>
+
+            <ng-template #searchResult>
+                <div class="col-md-3 col-6 text-center"                 
+                    app-preview-product
+                    *ngFor="let product of data"
+                    [idSanPham]="product.id"
+                    [slugSanPham]="product.slug"
+                    [imgSanPham]="product.img === false ? './../../../assets/img/default-img-phutungsuzuki.jpg': product.img[0]"
+                    [priceSanpham]="product.price"
+                    [salePriceSanpham]="product.sale_price"
+                    [titleSanpham]="product.title"
+                ></div>
+            </ng-template>
         </div>
     </div>
 
@@ -54,3 +75,7 @@
         ></ngb-pagination>
     </div>
 </main>
+
+<ng-template #loading>
+    <app-pre-loading></app-pre-loading>
+</ng-template>

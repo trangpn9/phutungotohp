@@ -2,8 +2,14 @@
 <form id="wrap-frm-search" class="form-inline carousel-frm">
     <div class="row">
         <div class="form-group col-md-3">
-            <button type="button" routerLink="/san-pham" (click)="outFocus()" class="btn btn-search cl-frm-search site-button"><img src="./../../../assets/img/icon_search_peugeot.png"
-                    style="width:30px; margin-right: 0.8rem" />PHỤ TÙNG ÔTÔ </button>
+            <button 
+                type="button" 
+                [routerLink]="['/san-pham/search', codeProduct.value, nameProduct.value]" 
+                (click)="outFocus()" class="btn btn-search cl-frm-search site-button"
+            >
+                    <img src="./../../../assets/img/icon_search_peugeot.png" style="width:30px; margin-right: 0.8rem" />
+                    PHỤ TÙNG ÔTÔ 
+            </button>
         </div>
         <div class="form-group col-md-3">
             <input 
@@ -26,7 +32,7 @@
             />
         </div>
         <div class="form-group col-md-3">
-            <button type="button" routerLink="/san-pham" (click)="outFocus()" class="btn btn-search cl-frm-search site-button">Tìm kiếm</button>
+            <button type="button" [routerLink]="['/san-pham/search', codeProduct.value, nameProduct.value]" (click)="outFocus()" class="btn btn-search cl-frm-search site-button">Tìm kiếm</button>
         </div>
     </div>
     
