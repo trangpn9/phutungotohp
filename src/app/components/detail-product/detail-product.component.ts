@@ -75,8 +75,8 @@ export class DetailProductComponent implements OnInit {
             this.data = {...product};
             this.imgPreview = this.data['img'] === false ? './assets/img/default-img-phutungsuzuki.jpg' : this.data['img'][0];
             this.title.setTitle(this.data['title'] + ' | Hà Nội');
-            if (product['category_id']) {
-              this.relateProducts = this.searchRelateProduct(parseInt(product['category_id']), parseInt(product['id']), getAllProducts);
+            if (product['arr_tags'][0]) {
+              this.relateProducts = this.searchRelateProduct(parseInt(product['arr_tags'][0]['term_id']), parseInt(product['id']), getAllProducts);
             }
           }
         });
@@ -87,8 +87,8 @@ export class DetailProductComponent implements OnInit {
           this.title.setTitle(this.data['title'] + ' | Hà Nội');      
           this._commonService.getAllProducts.subscribe((dataAllProducts: any) => {
             this.viewedProducts = this.searchViewedProduct(getViewedProducts, [...dataAllProducts]);             
-            if (this.data['category_id']) {
-              this.relateProducts = this.searchRelateProduct(parseInt(this.data['category_id']), parseInt(this.data['id']), [...dataAllProducts]);
+            if (this.data['arr_tags'][0]) {
+              this.relateProducts = this.searchRelateProduct(parseInt(this.data['arr_tags'][0]['term_id']), parseInt(this.data['id']), [...dataAllProducts]);
             }
           })
         }, (err) => {
@@ -123,17 +123,17 @@ export class DetailProductComponent implements OnInit {
 
   /**
    * Function get 8 relate products
-   * @param categoryId 
+   * @param tagId 
    * @param allProducts 
    */
-  searchRelateProduct(categoryId: number, idProduct: number, allProducts: any[]) {
+  searchRelateProduct(tagId: number, idProduct: number, allProducts: any[]) {
     let result: any[] = [];
     allProducts.forEach((product) => {      
       if (idProduct !== product['id']) {
-        const gettArrCate = product['arr_info_category'] ;
-        if (result.length < 4) {
-          gettArrCate.forEach((cateInfo) => {
-            if (categoryId === parseInt(cateInfo['term_id'])) {          
+        const gettArrTags = product['arr_tags'] ;
+        if (result.length < 8) {
+          gettArrTags.forEach((tagInfo) => {
+            if (tagId === parseInt(tagInfo['term_id'])) {          
               return result = [...result,product];          
             }
           });

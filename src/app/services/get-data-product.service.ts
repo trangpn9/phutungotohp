@@ -22,4 +22,6 @@ export class GetDataProductService {
   getPaginateProduct() {    
     return this.http.get(`${AppSetting.API_SERVICE}wp/v2/paginate-product`);
   }
+
+  
 }
