@@ -1,0 +1,47 @@
+#wrap-category-menu {
+    margin-top: 1rem;
+}
+#h2-title-category.site-button {
+    background-color:#C61010;
+    font-size: 1.02rem;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 8px;
+}
+
+.dropright-category {
+    width: 100%;    
+}
+
+.dropright-category .btn {
+    text-align: left;
+    border-radius: 0;
+}
+.dropright-category .btn.active.focus,
+.dropright-category .btn.active:focus,
+.dropright-category .btn.focus,
+.dropright-category .btn.focus:active,
+.dropright-category .btn:active:focus,
+.dropright-category .btn:focus {
+  outline: 0;
+  outline-offset: 0 ;  
+  -webkit-box-shadow: none;
+  box-shadow: none ;
+}
+.dropright-category.dropright .dropdown-menu {
+    margin-left: 0;
+    border-radius: 0;
+}
+.dropright-category.dropright:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropright-category.dropright>.dropdown-toggle:active {
+/*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.dropright-category.dropright .dropdown-toggle::after  {
+    border: unset;
+}
+  
