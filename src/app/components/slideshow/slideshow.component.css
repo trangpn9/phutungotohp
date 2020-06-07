@@ -44,4 +44,31 @@
 .dropright-category.dropright .dropdown-toggle::after  {
     border: unset;
 }
-  
+.wrap-home-cate-product .card-header {
+    clear: both;
+    padding: 0;    
+    overflow: hidden;
+}
+.wrap-home-cate-product .name-cate-product {
+    float: left;
+}
+.wrap-home-cate-product .card-header-tabs {
+    margin: 0;
+    float: left;
+}
+.wrap-home-cate-product .card-header-tabs.nav-tabs .nav-link {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0;
+}
+.wrap-home-cate-product .card-header a.view-all-product {
+    float: right;
+    padding: 10px 15px;
+}
+.wrap-home-cate-product .name-cate-product {
+    background-color: #C61010;
+    padding: 10px 15px; 
+}
+.wrap-home-cate-product .h5-title-product {
+    font-size: 15px;
+}
