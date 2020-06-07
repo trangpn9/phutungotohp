@@ -72,3 +72,24 @@
 .wrap-home-cate-product .h5-title-product {
     font-size: 15px;
 }
+.wrarp-slie-img-cate {
+    display: block;
+    position: relative;
+}
+.wrarp-slie-img-cate h3.title {
+    position: absolute;
+    z-index: 10;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    margin-bottom: 0;
+    padding: 10px 15px;
+    text-transform: capitalize;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+}
+.wrarp-slie-img-cate h3.title:hover, 
+.wrarp-slie-img-cate:hover h3.title  {
+    color: #C61010;
+}
