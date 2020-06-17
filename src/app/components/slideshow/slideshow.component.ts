@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-slideshow',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlideshowComponent implements OnInit {
 
+  faAngleDoubleRight = faAngleDoubleRight;
+
   constructor() { }
+  
 
   ngOnInit() {
   }
